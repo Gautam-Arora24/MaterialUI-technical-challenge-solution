@@ -9,12 +9,12 @@ describe('Switch', () => {
   });
 
   test('sets aria-checked attribute to true', () => {
-    const { getByRole } = render(<Switch checked />);
-    expect(getByRole('switch')).toHaveAttribute('aria-checked', true);
+    const { getByRole } = render(<Switch checked />);                    // aria-checked attribute accepts strings instead of boolean.
+    expect(getByRole('switch')).toHaveAttribute('aria-checked', "true"); // Edited the boolean true to "true"
   });
 
   test('sets aria-checked attribute to false', () => {
     const { getByRole } = render(<Switch checked={false} />);
-    expect(getByRole('switch')).toHaveAttribute('aria-checked', false);
+    expect(getByRole('switch')).toHaveAttribute('aria-checked', "false"); //Edited the boolean false to "false"
   });
 })
